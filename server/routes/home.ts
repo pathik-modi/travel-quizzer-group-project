@@ -1,12 +1,11 @@
 import express from 'express'
-import { getAllCitiesAndAttributes } from '../db/db'
+import { getAllCitiesAndAttributes, getAllCitiesData } from '../db/db'
 
 const router = express.Router()
 
 router.get('/', async (req, res) => {
   try {
-    const getAll = await getAllCitiesAndAttributes()
-    console.log(getAll)
+    const getAll = await getAllCitiesData()
     res.json(getAll)
     // res.sendStatus(200)
   } catch (error) {

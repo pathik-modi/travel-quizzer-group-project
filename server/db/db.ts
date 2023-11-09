@@ -1,5 +1,9 @@
 import db from './connection'
 
+export function getAllCitiesData() {
+  return db('cities').select()
+}
+
 export function getAllCitiesAndAttributes() {
   return db('cities')
     .join('attributesOfCities', 'city_id', 'cities.id')
