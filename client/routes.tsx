@@ -1,7 +1,7 @@
 import { Route, createRoutesFromElements } from 'react-router-dom'
 import Layout from './components/Layout'
 import HomePage from './components/HomePage'
-import QuizPage from './components/FrogPage'
+import QuizPage from './components/QuizPage'
 
 export default createRoutesFromElements(
   <Route path="/" element={<Layout />}>
