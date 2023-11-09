@@ -27,14 +27,17 @@ function HomePage() {
         <div>
           <h2>Quiz</h2>
           <p>Adventurious Route</p>
-          <button>Quiz</button>
+          <p></p>
+          <button>
+            <Link to="/frogs/xavier">Quiz Page</Link>
+          </button>
         </div>
 
-        <div>
+        {/* <div>
           <h2>Countires</h2>
           <p>Explore Route</p>
-          <button>Countires</button>
-        </div>
+          <Link to="/frogs/xavier">Countries</Link>
+        </div> */}
       </div>
       {/* 
       {count}
