@@ -4,7 +4,8 @@ export default function Layout() {
   return (
     <>
       <header>
-        <h1>Website</h1>
+        <h1>ASK M</h1>
+        <h1>Your travel Guide.....</h1>
       </header>
       <main>
         <Outlet />

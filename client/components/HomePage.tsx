@@ -23,6 +23,20 @@ function HomePage() {
 
   return (
     <>
+      <div className="homepageButtons">
+        <div>
+          <h2>Quiz</h2>
+          <p>Adventurious Route</p>
+          <button>Quiz</button>
+        </div>
+
+        <div>
+          <h2>Countires</h2>
+          <p>Explore Route</p>
+          <button>Countires</button>
+        </div>
+      </div>
+      {/* 
       {count}
       <h1>{greeting}</h1>
       {isError && (
@@ -32,8 +46,8 @@ function HomePage() {
       )}
       <button onClick={() => setCount(count + 1)}>Click</button>
       <p>
-        <Link to="/frogs/kevin">Is there a frog named Kevin?</Link>
-      </p>
+        <Link to="/frogs/xavier">Is there a frog named Kevin?</Link>
+      </p> */}
     </>
   )
 }
