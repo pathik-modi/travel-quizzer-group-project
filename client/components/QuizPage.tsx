@@ -12,7 +12,6 @@ export default function QuizPage() {
       atrTwo,
       atrThree,
     }
-    console.log(userInput)
   }
 
   return (
