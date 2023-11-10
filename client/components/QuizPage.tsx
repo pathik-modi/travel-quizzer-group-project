@@ -14,7 +14,6 @@ export default function QuizPage() {
       atrThree,
       atrFour,
     }
-    console.log(userInput)
   }
 
   return (
