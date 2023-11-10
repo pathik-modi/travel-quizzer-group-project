@@ -1,6 +1,9 @@
+import { useState } from 'react'
 import { addUserInput } from '../apiClient'
 
 export default function QuizPage() {
+  const [finalResult, setFinalResult] = useState([])
+
   async function handleFormSubmit(event: any) {
     event.preventDefault()
     const target = event.currentTarget
@@ -18,6 +21,7 @@ export default function QuizPage() {
     }
     // console.log(userInput)
     const topThree = await addUserInput(userInput)
+    setFinalResult(topThree)
     console.log(topThree)
     // topThree.[].map((obj) => )
   }
@@ -89,6 +93,14 @@ export default function QuizPage() {
             <button className="add-button">Submit</button>
           </div>
         </form>
+        <div>
+          Here is your Matched Country -{' '}
+          <b>
+            <br />
+            {finalResult[0]} <br /> {finalResult[1]} <br />
+            {finalResult[2]}
+          </b>
+        </div>
       </div>
     </>
   )
