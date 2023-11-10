@@ -10,6 +10,7 @@ export default function Layout() {
       <main>
         <Outlet />
       </main>
+      <br />
       <footer>Copyright &copy; 2038</footer>
     </>
   )
