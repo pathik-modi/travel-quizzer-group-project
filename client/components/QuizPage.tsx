@@ -1,3 +1,5 @@
+import { addUserInput } from '../apiClient'
+
 export default function QuizPage() {
   function handleFormSubmit(event: any) {
     event.preventDefault()
@@ -14,6 +16,8 @@ export default function QuizPage() {
       atrThree,
       atrFour,
     }
+    console.log(userInput)
+    addUserInput(userInput)
   }
 
   return (

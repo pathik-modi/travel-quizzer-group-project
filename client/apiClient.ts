@@ -4,8 +4,11 @@ const citiesURL = '/api/v1'
 
 export async function getCitiesData() {
   const res = await request.get(`${citiesURL}`)
-
   return res.body
+}
+
+export async function addUserInput(userInput) {
+  await request.post(`${citiesURL}/quiz`).send(userInput)
 }
 
 getCitiesData()
