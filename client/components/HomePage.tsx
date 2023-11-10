@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { getCitiesData } from '../apiClient.ts'
 import { Link } from 'react-router-dom'
+import QuizPage from './QuizPage.tsx'
 
 function HomePage() {
   const [greeting, setGreeting] = useState('')
@@ -13,9 +14,16 @@ function HomePage() {
         <div>
           <h2>Quiz</h2>
           <p>Adventurious Route</p>
-          <p></p>
           <button>
-            <Link to="/frogs/xavier">Quiz Page</Link>
+            <Link to="/quiz">Quiz Page</Link>
+          </button>
+        </div>
+
+        <div>
+          <h2>Cities</h2>
+          <p>Explore Your Options</p>
+          <button>
+            <Link to="/cities">Cities Page</Link>
           </button>
         </div>
       </div>
