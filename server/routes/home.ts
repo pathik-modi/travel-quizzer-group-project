@@ -1,18 +1,18 @@
 import express from 'express'
 import { getAllCitiesAndAttributes, getAllCitiesData } from '../db/db'
+import { addUserInput } from '../../client/apiClient'
 
 const router = express.Router()
 
-const attributes = {
-  atr1: 'Art',
-  atr2: 'Fine Dining',
-  atr3: 'Shopping',
-  atr4: 'Culture',
-}
+// const attributes = {
+//   atr1: 'Art',
+//   atr2: 'Fine Dining',
+//   atr3: 'Shopping',
+//   atr4: 'Culture',
+// }
 
 router.get('/', async (req, res) => {
   try {
-
     const getAllCities = await getAllCitiesData()
     res.json(getAllCities)
     // res.sendStatus(200)
@@ -21,20 +21,34 @@ router.get('/', async (req, res) => {
   }
 })
 
+router.post('/quiz', async (req, res) => {
+  try {
+    const attributes = req.body
+
+    res.sendStatus(201)
+  } catch (error) {
+    if (error instanceof Error) {
+      console.error(error)
+      res.status(500).json({ error: 'woopsie server error' })
+    }
+  }
+})
+
 router.get('/quiz', async (req, res) => {
   try {
     const getAll = await getAllCitiesAndAttributes()
+
     const atr1array = getAll.filter((object) => {
-      return object.attribute === attributes.atr1
+      return object.attribute === attributes.atrOne
     })
     const atr2array = getAll.filter((object) => {
-      return object.attribute === attributes.atr2
+      return object.attribute === attributes.atrTwo
     })
     const atr3array = getAll.filter((object) => {
-      return object.attribute === attributes.atr3
+      return object.attribute === attributes.atrThree
     })
     const atr4array = getAll.filter((object) => {
-      return object.attribute === attributes.atr4
+      return object.attribute === attributes.atrFour
     })
 
     const getAllCitiesAndAttributesArray = atr1array.concat(
@@ -70,7 +84,6 @@ router.get('/quiz', async (req, res) => {
     res.json(topThreeCities)
 
     // res.sendStatus(200)
-
   } catch (error) {
     console.error(error)
   }
