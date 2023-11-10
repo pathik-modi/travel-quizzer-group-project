@@ -14,7 +14,7 @@ function HomePage() {
         <div>
           <h2>Quiz</h2>
           <p>Adventurious Route</p>
-          <button>
+          <button className="add-button">
             <Link to="/quiz">Quiz Page</Link>
           </button>
         </div>
@@ -22,7 +22,7 @@ function HomePage() {
         <div>
           <h2>Cities</h2>
           <p>Explore Your Options</p>
-          <button>
+          <button className="add-button">
             <Link to="/cities">Cities Page</Link>
           </button>
         </div>

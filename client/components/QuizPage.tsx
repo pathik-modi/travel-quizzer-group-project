@@ -6,11 +6,13 @@ export default function QuizPage() {
     const atrOne = form.get('atrOne')?.valueOf() as string
     const atrTwo = form.get('atrTwo')?.valueOf() as string
     const atrThree = form.get('atrThree')?.valueOf() as string
+    const atrFour = form.get('atrFour')?.valueOf() as string
 
     const userInput = {
       atrOne,
       atrTwo,
       atrThree,
+      atrFour,
     }
     console.log(userInput)
   }
@@ -39,8 +41,8 @@ export default function QuizPage() {
               <input type="radio" name="atrTwo" value="Beaches" />
               <label htmlFor="Beaches">Beaches</label>
               <br />
-              <input type="radio" name="atrTwo" value="luxury" />
-              <label htmlFor="luxury">luxury</label>
+              <input type="radio" name="atrTwo" value="Luxury" />
+              <label htmlFor="Luxury">Luxury</label>
               <br />
               <input type="radio" name="atrTwo" value="Shopping" />
               <label htmlFor="Shopping">Shopping</label>
@@ -62,10 +64,24 @@ export default function QuizPage() {
               <input type="radio" name="atrThree" value="Romantic" />
               <label htmlFor="Romantic">Romantic</label>
             </div>
+            <div>
+              <p>Choose your Fourth Preference to get your Result</p>
+              <input type="radio" name="atrFour" value="Wine Tasting" />
+              <label htmlFor="Wine Tasting">Wine Tasting</label>
+              <br />
+              <input type="radio" name="atrFour" value="Culture" />
+              <label htmlFor="Culture">Culture</label>
+              <br />
+              <input type="radio" name="atrFour" value="Shopping" />
+              <label htmlFor="Shopping">Shopping</label>
+              <br />
+              <input type="radio" name="atrFour" value="Adventure" />
+              <label htmlFor="Adventure">Adventure</label>
+            </div>
           </div>
           <br />
           <div>
-            <button className="centerButton">Submit</button>
+            <button className="add-button">Submit</button>
           </div>
         </form>
       </div>
