@@ -4,7 +4,6 @@
  */
 export async function seed(knex) {
   // Deletes ALL existing entries
-  await knex('cities').del()
   await knex('cities').insert([
     {
       continent: 'Europe',

@@ -1,6 +1,7 @@
+import { log } from 'console'
 import request from 'superagent'
 
-const citiesURL = 'api/v1'
+const citiesURL = '/api/v1'
 
 const attributes = {
   atr1: 'Art',
@@ -9,6 +10,7 @@ const attributes = {
 }
 
 export async function getCitiesData() {
+
   const res = await request.get(citiesURL)
   console.log(res.body)
   // return res.body
@@ -25,4 +27,6 @@ export async function getAllCitiesAndAttributes() {
   console.log(attributes.atr1)
   console.log(res)
   return atr1array
+
+
 }

@@ -12,6 +12,7 @@ const attributes = {
 
 router.get('/', async (req, res) => {
   try {
+
     const getAllCities = await getAllCitiesData()
     res.json(getAllCities)
     // res.sendStatus(200)
@@ -69,6 +70,7 @@ router.get('/quiz', async (req, res) => {
     res.json(topThreeCities)
 
     // res.sendStatus(200)
+
   } catch (error) {
     console.error(error)
   }
