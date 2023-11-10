@@ -2,9 +2,8 @@ import * as Path from 'node:path'
 import express from 'express'
 import cors, { CorsOptions } from 'cors'
 
-import home from './routes/home'
-
 const server = express()
+import home from './routes/home'
 
 server.use('/api/v1', home)
 

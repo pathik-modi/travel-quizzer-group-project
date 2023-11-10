@@ -7,7 +7,7 @@ router.get('/', async (req, res) => {
   try {
     const getAll = await getAllCitiesData()
     res.json(getAll)
-    // res.sendStatus(200)
+    //sres.sendStatus(200)
   } catch (error) {
     console.error(error)
   }

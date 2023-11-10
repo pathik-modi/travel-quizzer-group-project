@@ -4,7 +4,6 @@
  */
 export async function seed(knex) {
   // Deletes ALL existing entries
-  await knex('attributes').del()
   await knex('attributes').insert([
     { attribute: 'Art' },
     { attribute: 'Beaches' },

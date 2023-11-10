@@ -1,5 +1,3 @@
-import { useParams } from 'react-router-dom'
-
 export default function QuizPage() {
   function handleFormSubmit(event: any) {
     event.preventDefault()
