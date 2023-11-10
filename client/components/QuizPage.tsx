@@ -1,7 +1,7 @@
 import { addUserInput } from '../apiClient'
 
 export default function QuizPage() {
-  function handleFormSubmit(event: any) {
+  async function handleFormSubmit(event: any) {
     event.preventDefault()
     const target = event.currentTarget
     const form = new FormData(target)
@@ -16,8 +16,10 @@ export default function QuizPage() {
       atrThree,
       atrFour,
     }
-    console.log(userInput)
-    addUserInput(userInput)
+    // console.log(userInput)
+    const topThree = await addUserInput(userInput)
+    console.log(topThree)
+    // topThree.[].map((obj) => )
   }
 
   return (

@@ -3,16 +3,15 @@ import { getAllCitiesAndAttributes, getAllCitiesData } from '../db/db'
 
 const router = express.Router()
 
-const attributes = {
-  atr1: 'Art',
-  atr2: 'Fine Dining',
-  atr3: 'Shopping',
-  atr4: 'Culture',
-}
+// const attributes = {
+//   atrOne: 'Art',
+//   atrTwo: 'Fine Dining',
+//   atrThree: 'Shopping',
+//   atrFour: 'Culture',
+// }
 
 router.get('/', async (req, res) => {
   try {
-
     const getAllCities = await getAllCitiesData()
     res.json(getAllCities)
     // res.sendStatus(200)
@@ -21,56 +20,69 @@ router.get('/', async (req, res) => {
   }
 })
 
+// router.post('/quiz', async (req, res) => {
+//   try {
+//     const attributes = req.body
+
+//     res.sendStatus(201)
+//   } catch (error) {
+//     if (error instanceof Error) {
+//       console.error(error)
+//       res.status(500).json({ error: 'woopsie server error' })
+//     }
+//   }
+// })
+
 router.get('/quiz', async (req, res) => {
   try {
     const getAll = await getAllCitiesAndAttributes()
-    const atr1array = getAll.filter((object) => {
-      return object.attribute === attributes.atr1
-    })
-    const atr2array = getAll.filter((object) => {
-      return object.attribute === attributes.atr2
-    })
-    const atr3array = getAll.filter((object) => {
-      return object.attribute === attributes.atr3
-    })
-    const atr4array = getAll.filter((object) => {
-      return object.attribute === attributes.atr4
-    })
 
-    const getAllCitiesAndAttributesArray = atr1array.concat(
-      atr2array,
-      atr3array,
-      atr4array
-    )
-    const citiesArray = getAllCitiesAndAttributesArray.map((ob) => ob.city)
+    // const atr1array = getAll.filter((object) => {
+    //   return object.attribute === attributes.atrOne
+    // })
+    // const atr2array = getAll.filter((object) => {
+    //   return object.attribute === attributes.atrTwo
+    // })
+    // const atr3array = getAll.filter((object) => {
+    //   return object.attribute === attributes.atrThree
+    // })
+    // const atr4array = getAll.filter((object) => {
+    //   return object.attribute === attributes.atrFour
+    // })
 
-    const cityCounts = citiesArray.reduce(
-      (count, item) => ((count[item] = count[item] + 1 || 1), count),
-      {}
-    )
+    // const getAllCitiesAndAttributesArray = atr1array.concat(
+    //   atr2array,
+    //   atr3array,
+    //   atr4array
+    // )
+    // const citiesArray = getAllCitiesAndAttributesArray.map((ob) => ob.city)
 
-    console.log(cityCounts)
+    // const cityCounts = citiesArray.reduce(
+    //   (count, item) => ((count[item] = count[item] + 1 || 1), count),
+    //   {}
+    // )
 
-    const cityCountsArray = Object.entries(cityCounts)
+    // console.log(cityCounts)
 
-    const sortedArray = cityCountsArray
-      .map((obj) => {
-        return { name: obj[0], count: obj[1] }
-      })
-      .sort((a, b) => a.count - b.count)
-      .reverse()
+    // const cityCountsArray = Object.entries(cityCounts)
 
-    console.log(sortedArray)
+    // const sortedArray = cityCountsArray
+    //   .map((obj) => {
+    //     return { name: obj[0], count: obj[1] }
+    //   })
+    //   .sort((a, b) => a.count - b.count)
+    //   .reverse()
 
-    sortedArray.splice(3)
+    // console.log(sortedArray)
 
-    const topThreeCities = sortedArray.map((obj) => obj.name)
+    // sortedArray.splice(3)
+
+    // const topThreeCities = sortedArray.map((obj) => obj.name)
 
     // console.log(attributes.atr1)
-    res.json(topThreeCities)
+    res.json(getAll)
 
     // res.sendStatus(200)
-
   } catch (error) {
     console.error(error)
   }
